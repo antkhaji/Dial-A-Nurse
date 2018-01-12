@@ -1,0 +1,83 @@
+androd<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content parallax-header>
+  <div class="header-image"></div>
+  <div class="main-content">
+    <img src="{{imageurl}}" (error)="setDefaultPic()" class="dp">
+    <ion-list no-lines>
+      <!-- <div class="rigt-pad">
+        <ion-item>
+          <ion-icon name="contacts" item-start></ion-icon>
+          {{displayname}}
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div> -->
+      <div class="rigt-pad">
+        <ion-item>
+          <ion-icon name="contacts" item-start></ion-icon>
+          {{firstname}} {{lastname}}
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+      <div class="rigt-pad">
+        <ion-item>
+          <ion-icon name="mail" item-start></ion-icon>
+          {{email}}
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+      <div class="rigt-pad">
+        <ion-item>
+          <ion-icon name="call" item-start></ion-icon>
+          {{phonenumber}}
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+      <div class="rigt-pad" [hidden]="is_nurse !=1">
+        <ion-item>
+          <ion-icon name="paper" item-start></ion-icon>
+          {{no_certs}} Certificates
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+      <div class="rigt-pad" [hidden]="is_nurse !=1">
+        <ion-item>
+          <ion-icon name="calculator" item-start></ion-icon>
+          {{no_certs}} jobs done
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+      <div class="rigt-pad" [hidden]="is_nurse !=1">
+        <ion-item>
+          <ion-icon name="done-all" item-start></ion-icon>
+          4.2 rating
+          <ion-icon name="arrow-dropright" item-end></ion-icon>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons text-center>
+      <button ion-button icon-left (click)="editAccount()">
+        <ion-icon name="create"></ion-icon>Edit
+      </button>
+      <button ion-button icon-left [hidden]="is_nurse !=1" (click)="uploadCerts()">
+        <ion-icon name="cloud-upload"></ion-icon>Upload Certificates
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

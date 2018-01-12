@@ -1,0 +1,40 @@
+<!--
+  Generated template for the AddjobPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="ubuntu">
+    <ion-title>Place a job</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Title</ion-label>
+      <ion-input [(ngModel)]="addjobData.title" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea [(ngModel)]="addjobData.description" name="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Location</ion-label>
+      <ion-input [(ngModel)]="addjobData.location" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Amount</ion-label>
+      <ion-input [(ngModel)]="addjobData.amount" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Date</ion-label>
+      <ion-input type="date" (input)="date = $event.target.value" displayFormat="YYYY-MM-DD" [(ngModel)]="addjobData.date"></ion-input>
+    </ion-item>
+   <ion-item></ion-item>
+  </ion-list>
+  <div class="btnadd">
+    <button ion-button color="ubuntu" (click)="placeJob()" [disabled]="!addjobData.title || !addjobData.description || !addjobData.location || !addjobData.date" block outline>Place job
+      </button>
+  </div>
+</ion-content>

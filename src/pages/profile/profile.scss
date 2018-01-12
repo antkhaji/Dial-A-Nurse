@@ -1,0 +1,66 @@
+.ios,
+.md {
+  page-profile {
+    .bg {
+      background: url('../assets/images/lion.jpg');
+      height: 300px;
+      background-size: cover;
+      filter: blur(1px);
+      background-position: center center;
+    }
+
+    .main-cnt {
+      width: 100%;
+      height: 700px;
+      background-color: #efefef;
+    }
+
+    .header-image {
+      // background-image: url('https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950');
+      background: url('../assets/images/meds2.jpg');
+      height: 40vh;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    .dp {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      z-index: 10;
+      margin-top: -30%;
+      position: relative;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      box-shadow: -6px 10px 100px 3px rgba(0, 0, 0, 0.75);
+    }
+
+    .card-padd {
+      padding: 5px;
+    }
+
+    ion-list ion-item {
+      color: map-get($colors, primary);
+      background-color: #ecf0f1;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+
+    .rigt-pad {
+      margin-right: 10px !important;
+      margin-left: 10px !important;
+    }
+
+
+
+    .title {
+      color: map-get($colors, primary);
+    }
+  }
+}

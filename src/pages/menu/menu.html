@@ -1,0 +1,40 @@
+<ion-menu [content]="content">
+  <!-- <ion-header>
+    <ion-toolbar color="ubuntu">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-content>
+    <!-- <ion-card text-center class="hide-card side-menu-gradient"> -->
+    <ion-item class="side-menu-gradient">
+      <img src="{{imageurl}}" (error)="setDefaultPic()" class="custom-avatar" />
+      <!--  <img class="custom-avatar" src="{{imageurl}}"
+        onError="this.src='./app/assets/images/placeholder.png';"  alt="..." /> -->
+      <h2>{{displayName}}</h2>
+      <h2>{{email}}</h2>
+    </ion-item>
+    <!-- </ion-card> -->
+    <ion-list class="listion" no-lines>
+
+      <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.icon" class="custom-icon"></ion-icon>
+        <p class="ptitle">{{p.title}}</p>
+      </button>
+
+      <hr class="hrmargin">
+      <p class="parauser">User Control</p>
+      <button menuClose ion-item [class.activeHighlight]="checkActive(p)" (click)="uploadCerts()">
+        <ion-icon item-start name="medkit" class="custom-icon"></ion-icon>
+        <p class="ptitle">Work as health worker</p>
+      </button>
+      <button menuClose ion-item [class.activeHighlight]="checkActive(p)" (click)="signOut()">
+        <ion-icon item-start name="power" class="custom-icon"></ion-icon>
+        <p class="ptitle">Logout</p>
+      </button>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

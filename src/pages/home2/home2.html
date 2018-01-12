@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="ubuntu">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="signOut()">
+        <ion-icon name="power"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="...fetching data">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+        <ion-card *ngFor="let person of users" (click)="detail(person.id)">
+        
+      <ion-card-header>
+        {{person.title}}
+      </ion-card-header>
+      <ion-card-content>
+        <p>Description: {{person.description | shortjobdetail : 120}}</p>
+        <p>Price: {{person.amount}} ksh</p>
+        <!-- <p>Date: {{job.date}}</p> -->
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="list-box"></ion-icon>
+            <div>click for details</div>
+          </button>
+        </ion-col>
+      
+      </ion-row>
+
+    </ion-card>
+    
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-fab right bottom>
+    <button ion-fab color="ubuntu" (click)="addJob()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

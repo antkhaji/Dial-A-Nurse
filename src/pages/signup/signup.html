@@ -1,0 +1,29 @@
+<ion-content class="background">
+  <div class="home">
+    <h1>Happy Coding</h1>
+    <ion-card>
+      <ion-card-header>
+        Sign Up
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="signupData.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="signupData.password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Re-Enter Password</ion-label>
+            <ion-input type="password" [(ngModel)]="signupData.passwordRetyped"></ion-input>
+          </ion-item>
+          <ion-item>
+          <button class="btn" ion-button color="primary" block (click)="signup()" [disabled]="!signupData.email || !signupData.password || !signupData.passwordRetyped" outline>Signup</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -33,13 +33,28 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+// $colors: (
+//   primary:    #488aff,
+//   secondary:  #32db64,
+//   danger:     #f53d3d,
+//   light:      #f4f4f4,
+//   dark:       #222,
+//   ubuntu:     #FF9068
+// );
+
 $colors: (
-  primary:    #488aff,
+  primary:    #FF9068,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  ubuntu:     #FF9068,
+  primaryblue:    #488aff
 );
+
+$toast-ios-background:(#FF9068);
+$toast-md-background:(#FF9068);
+$toast-wp-background:(#FF9068);
 
 
 // App iOS Variables

@@ -1,0 +1,93 @@
+page-menu {
+  $SIDEMENU_TOP: #ff4b1f;
+  $SIDEMENU_BOTTOM: #ff9068;
+  $SIDEMENU_TRANSPARENCY: rgba(255, 255, 255, 0.4);
+  .activeHighlight {
+    background-color: map-get($colors, light); //background-color: $SIDEMENU_BOTTOM;
+  }
+
+  .hide-card {
+    -webkit-box-shadow: none!important;
+  }
+
+  .custom-avatar {
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 2%;
+    display: block; // margin-left: auto;
+    // margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+  .ptitle {
+    margin: 2px;
+  }
+
+  .picon {
+    margin: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1em;
+  }
+
+  i.custom-icon {
+    font-size: 64px;
+    color: red;
+  }
+
+  .side-menu-item {
+    background: none;
+    color: white;
+    font-weight: 300;
+    border: 0px;
+    .item-content {
+      background: none;
+      &.activated {
+        background: $SIDEMENU_TRANSPARENCY;
+      }
+    }
+
+    &.active-page-highlight {
+      .item-content {
+        background: $SIDEMENU_TRANSPARENCY;
+      }
+    }
+  }
+
+  .side-menu-gradient {
+    // text-align: center;
+    //background: linear-gradient(to bottom left, #FF9068 60%, #FF4B1F 100%);
+    background: map-get($colors, ubuntu);
+  }
+
+  .side-menu-gradient h2 {
+    color: #fff; //font-size: 2em;
+    // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+  }
+
+  .listion {
+    margin-top: 3%;
+  }
+
+  .parauser {
+    padding-left: 5%;
+    opacity: 0.5;
+    margin-top: 0%;
+  }
+
+  .hrmargin {
+    margin-top: 3%;
+  }
+
+  .bottombtn{
+    left: 0;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+  }
+}

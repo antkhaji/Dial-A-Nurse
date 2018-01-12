@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar color="ubuntu">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      My history
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="signOut()">
+        <ion-icon name="power"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content pullingText="Pull to refresh" pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="...fetching data">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card *ngFor="let person of jobs" (click)='detail(person.id)'>
+      <ion-card-header>
+      <ion-row>
+         <ion-col>{{person.title}}</ion-col>
+         <ion-col> 
+           <ion-buttons  end>
+
+           <ion-badge [hidden]="person.is_active != 0" item-end>job clossed</ion-badge>
+           </ion-buttons>
+         </ion-col>
+      </ion-row>
+        
+          
+      </ion-card-header>
+      <ion-card-content>
+        <p>Description: {{person.description | shortjobdetail : 120}}</p>
+        <p>Price: {{person.amount}} ksh</p>
+        <!-- <p>Date: {{job.date}}</p> -->
+      </ion-card-content>
+      <ion-row>
+        <!-- <div *ngIf="title; then logout else login"></div> -->
+
+        <ion-col>
+          <button ion-button icon-left clear small (click)='delete($event,person.id)'>
+            <ion-icon name="trash"></ion-icon>
+            <div>delete</div>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button [hidden]="person.is_active == 0" ion-button icon-left clear small (click)='edit($event,person.id)'>
+            <ion-icon name="create"></ion-icon>
+            <div>edit</div>
+          </button>
+        </ion-col>
+        
+        
+        <ion-col>
+          <button [hidden]="person.is_active == 0" ion-button icon-left clear small (click)='close($event,person.id)'>
+            <ion-icon name="close"></ion-icon>
+            <div>close</div>
+          </button>
+         
+          
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
